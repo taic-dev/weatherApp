@@ -1,0 +1,105 @@
+main{
+  height: calc(100vh - 104px);
+}
+
+.temperature-main{
+  position: relative;
+  height: 35%;
+}
+
+.temperature-main__desc{
+  width: 65%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+
+  padding: 15px 10px;
+  color: #fff;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 5px;
+}
+
+.temperature-main__desc p{
+  margin-bottom: 15px;
+  font-size: clamp(25px,0.5vw,16px);
+  font-weight: bold;
+}
+
+.temperature-main__desc span{
+  font-size: 18px;
+}
+
+.temperature-main__desc h2{
+  margin-top: 15px;
+  font-size: clamp(55px,3.5vw,40px);
+}
+
+.temperature-time{
+  padding: 15px 0;
+  height: 10%;
+  border-top: solid 1px ;
+  border-bottom: solid 1px ;
+  overflow-x: scroll;
+}
+
+.temperature-time__slider{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.temperature-time__item:first-child{
+  margin-left: 0;
+}
+
+.temperature-time__item{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 24px;
+}
+
+.temperature-week{
+  padding: 15px 0;
+  height: 47%;
+  border-bottom: solid 1px;
+}
+
+.temperature-week__list{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.temperature-week__item{
+  display: flex;
+  justify-content: space-between;
+}
+
+.temperature-week__range{
+  width: 25%;
+}
+
+
+/* Location */
+.location-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.location-main > div{
+  width: 90%;
+}
+
+.location-main > div{
+  margin-bottom: 50px;
+}
