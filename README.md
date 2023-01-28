@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://user-images.githubusercontent.com/52269577/215229052-87dfb695-df7f-47e3-ae02-ff309f6303b5.png">
+<img width="327" alt="スクリーンショット 2023-01-28 9 39 02" src="https://user-images.githubusercontent.com/52269577/215230525-2e48470d-42f3-4b01-8c9c-776eca3efa8c.png">
 </p>
 
 # Weather App 〜全国のお天気を検索〜
