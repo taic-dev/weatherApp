@@ -66,7 +66,6 @@ app.post("/setting-location", async (req, res) => {
     `http://geoapi.heartrails.com/api/json?method=getTowns&prefecture=${prefecture}`
   );
   await axios.get(URL).then((result) => {
-    console.log(result);
     res.json(result.data);
   });
 });

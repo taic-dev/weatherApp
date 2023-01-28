@@ -66,24 +66,13 @@ const Location = ({
       selectPrefectures: selectPrefectures,
     });
 
-    console.log(getTownInfo.data.response.location);
-    console.log(selectCity);
-    console.log(selectTown);
-
-
-
     getTownInfo.data.response.location.map(async (townInfo) => {
       if (selectCity !== townInfo.city) return;
       if (selectTown == townInfo.town) {
-        console.log(townInfo.x);
-        console.log(townInfo.y);
-
         setX(townInfo.x);
         setY(townInfo.y);
         setSelectPrefectures("");
         setSelectCity("");
-
-        // これだけ更新されない
 
         localStorage.setItem("Latitude", townInfo.x);
         localStorage.setItem("Longitude", townInfo.y);
