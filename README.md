@@ -6,7 +6,7 @@
 
 ## Demo
 <div align="center">
-https://user-images.githubusercontent.com/52269577/215363313-51ea18d2-9b9b-49af-9266-08924c237ebb.mov
+<video controls src="https://user-images.githubusercontent.com/52269577/215363313-51ea18d2-9b9b-49af-9266-08924c237ebb.mov"></video>
 </div>
 
 ## Description
