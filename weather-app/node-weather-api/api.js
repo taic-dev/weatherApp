@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const app = express();
 const router = express.Router();
@@ -6,6 +7,8 @@ const axios = require("axios");
 const store = require("store");
 const session = require("express-session");
 const { decycle, encycle } = require("json-cyclic");
+
+app.use(express.static(path.join(__dirname, '../react-weather/build')));
 
 app.use(
   session({
@@ -21,7 +24,7 @@ app.use(express.json());
 
 // cors対策
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.setHeader("Access-Control-Allow-Origin", process.env.APP_URL);
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, PUT, PATCH, DELETE, OPTION"
@@ -70,8 +73,8 @@ app.post("/setting-location", async (req, res) => {
   });
 });
 
-app.post("/", (req, res) => {
-  res.send("Got a POST request");
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname,'../react-weather/build/index.html'));
 });
 
 app.listen(port, () => {
