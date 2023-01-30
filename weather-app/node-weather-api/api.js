@@ -1,14 +1,9 @@
 require('dotenv').config();
 const express = require("express");
 const app = express();
-const router = express.Router();
 const port = 3001;
 const axios = require("axios");
-const store = require("store");
 const session = require("express-session");
-const { decycle, encycle } = require("json-cyclic");
-
-app.use(express.static(path.join(__dirname, '../react-weather/build')));
 
 app.use(
   session({
