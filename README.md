@@ -36,14 +36,14 @@ $ git clone https://github.com/taic-dev/weatherApp.git
 
 ・node api Start-up
 $ cd weather-app/node-weather-api
-$ npm install --save react@17.0.2 react-dom@17.0.2
-$ npm install react-router-dom@5.2.0
 .env.exampleを.envに変更
 $ node api.js
 
 ・react Start-up
 $ cd weather-app/react-weather
 $ npm install
+$ npm install --save react@17.0.2 react-dom@17.0.2
+$ npm install react-router-dom@5.2.0
 $ npm start
 ```
 
