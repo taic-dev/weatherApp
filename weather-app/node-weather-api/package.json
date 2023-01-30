@@ -13,7 +13,7 @@
   "main": "api.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/api.js",
+    "start": "node api.js",
     "heroku-postbuild": "cd react-weather && npm install && npm run build"
   },
   "author": "",

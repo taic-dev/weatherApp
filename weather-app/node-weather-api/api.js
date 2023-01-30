@@ -1,8 +1,9 @@
 require('dotenv').config();
 const express = require("express");
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001
 const axios = require("axios");
+var path = require('path');
 const session = require("express-session");
 
 app.use(
@@ -27,6 +28,9 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   next();
 });
+
+// こいつが原因ぽい
+// app.use(express.static(path.join(__dirname, '../react-weather/build')));
 
 app.get("/", (req, res) => {
   const latitude = req.query.latitude;

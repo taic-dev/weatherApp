@@ -35,7 +35,9 @@ function App() {
         setLoading(true);
         const baseURL = `http://localhost:3001?latitude=${X}&longitude=${Y}`;
         let response = await axios.get(baseURL);
+        console.log(response.data);
         setWeatherInfo(response.data);
+        
       } catch (e) {
         setError(e);
       }

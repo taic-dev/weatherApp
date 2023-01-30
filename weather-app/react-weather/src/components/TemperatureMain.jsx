@@ -1,8 +1,5 @@
 import React from 'react'
 import { WeatherList } from './WeatherList'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { color } from '@mui/system';
 
 const TemperatureMain = ({ weatherInfo, topPrefecture, topCity }) => {
 
