@@ -18,7 +18,7 @@ const Location = ({
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const prefecturesURL = "http://localhost:3001/prefectures";
+        const prefecturesURL = "https://geoapi.heartrails.com/api/json?method=getPrefectures";
         let prefecturesResponse = await axios.get(prefecturesURL);
         setPrefectures(prefecturesResponse.data.response.prefecture);
       } catch (e) {
