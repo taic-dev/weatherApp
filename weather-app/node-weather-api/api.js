@@ -32,15 +32,7 @@ app.use((req, res, next) => {
 // こいつが原因ぽい
 // app.use(express.static(path.join(__dirname, '../react-weather/build')));
 
-app.post("/change-city", async (req, res) => {
-  let prefecture = req.body.prefecture;
-  let URL = encodeURI(
-    `http://geoapi.heartrails.com/api/json?method=getCities&prefecture=${prefecture}`
-  );
-  await axios.get(URL).then((result) => {
-    res.json(result.data);
-  });
-});
+
 
 app.post("/setting-location", async (req, res) => {
   let prefecture = req.body.selectPrefectures;
