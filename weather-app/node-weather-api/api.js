@@ -32,19 +32,6 @@ app.use((req, res, next) => {
 // こいつが原因ぽい
 // app.use(express.static(path.join(__dirname, '../react-weather/build')));
 
-app.get("/", (req, res) => {
-  const latitude = req.query.latitude;
-  const longitude = req.query.longitude;
-  const checkLocation = async (latitude = 139.6823, longitude = 35.6785) => {
-    const URL = `https://api.open-meteo.com/v1/forecast?latitude=${longitude}&longitude=${latitude}&current_weather=true&hourly=temperature_2m,weathercode&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=Asia%2FTokyo&current_weather`;
-    await axios.get(URL).then((result) => {
-      res.json(result.data);
-    });
-  };
-
-  checkLocation(latitude, longitude);
-});
-
 app.get("/prefectures", async (req, res) => {
   const URL = "https://geoapi.heartrails.com/api/json?method=getPrefectures";
   await axios.get(URL).then((result) => {

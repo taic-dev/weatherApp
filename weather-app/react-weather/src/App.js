@@ -33,7 +33,8 @@ function App() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const baseURL = `http://localhost:3001?latitude=${X}&longitude=${Y}`;
+        console.log(X,Y);
+        const baseURL = `https://api.open-meteo.com/v1/forecast?latitude=${Y}&longitude=${X}&current_weather=true&hourly=temperature_2m,weathercode&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=Asia%2FTokyo&current_weather`;
         let response = await axios.get(baseURL);
         console.log(response.data);
         setWeatherInfo(response.data);
