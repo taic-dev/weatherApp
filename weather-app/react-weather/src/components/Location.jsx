@@ -32,11 +32,8 @@ const Location = ({
     setSelectPrefectures(e.target.value);
     setTopPrefecture(e.target.value);
 
-    const changePrefecturesURL = "http://localhost:3001/change-city";
-    let getCityInfo = await axios.post(changePrefecturesURL, {
-      prefecture: e.target.value,
-    });
-
+    const changePrefecturesURL = `http://geoapi.heartrails.com/api/json?method=getCities&prefecture=${e.target.value}`;
+    let getCityInfo = await axios.get(changePrefecturesURL);
     setCity(getCityInfo.data.response.location);
   };
 
