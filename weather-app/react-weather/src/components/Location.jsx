@@ -32,7 +32,7 @@ const Location = ({
     setSelectPrefectures(e.target.value);
     setTopPrefecture(e.target.value);
 
-    const changePrefecturesURL = `http://geoapi.heartrails.com/api/json?method=getCities&prefecture=${e.target.value}`;
+    const changePrefecturesURL = `https://geoapi.heartrails.com/api/json?method=getCities&prefecture=${e.target.value}`;
     let getCityInfo = await axios.get(changePrefecturesURL);
     setCity(getCityInfo.data.response.location);
   };
@@ -41,7 +41,7 @@ const Location = ({
     setSelectCity(e.target.value);
     setTopCity(e.target.value);
 
-    const settingLocationURL = `http://geoapi.heartrails.com/api/json?method=getTowns&prefecture=${selectPrefectures}`;
+    const settingLocationURL = `https://geoapi.heartrails.com/api/json?method=getTowns&prefecture=${selectPrefectures}`;
     const getTownInfo = await axios.get(settingLocationURL);
     console.log(getTownInfo);
 
@@ -57,7 +57,7 @@ const Location = ({
   const settingTown = (e) => setSelectTown(e.target.value);
 
   const settingCoordinate = async () => {
-    const settingLocationURL = `http://geoapi.heartrails.com/api/json?method=getTowns&prefecture=${selectPrefectures}`;
+    const settingLocationURL = `https://geoapi.heartrails.com/api/json?method=getTowns&prefecture=${selectPrefectures}`;
     const getTownInfo = await axios.get(settingLocationURL)
 
     getTownInfo.data.response.location.map(async (townInfo) => {
