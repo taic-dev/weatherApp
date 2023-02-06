@@ -23,7 +23,7 @@ Locationページでは調べたい地域を選択できます。
 
 ## Requirement
 - node.js v16.14.0
-- react.js v17.0.2
+- react.js v18.0.0
 
 ## Usage
 1. 今日の天気,1時間毎の天気/気温,1週間の天気/気温を確認できる
