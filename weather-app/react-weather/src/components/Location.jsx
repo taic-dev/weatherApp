@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Button, FormControl, InputLabel, MenuItem, Select, } from "@material-ui/core";
+import { Button, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 const Location = ({
   setX,

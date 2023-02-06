@@ -1,6 +1,5 @@
 import "./App.css";
 import React, {Fragment} from 'react';
-import { makeStyles } from "@material-ui/core";
 import { Reset } from "styled-reset";
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -10,15 +9,7 @@ import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Location from "./components/Location";
 
-const useStyles = makeStyles(() => ({
-  wrapper: {
-    maxWidth: "450px",
-    margin: "auto",
-  },
-}));
-
 function App() {
-  const classes = useStyles();
   const [weatherInfo, setWeatherInfo] = useState(null);
   const [buttonColor, setButtonColor] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -55,7 +46,7 @@ function App() {
 
   return (
     <>
-      <div className={classes.wrapper}>
+      <div style={{ maxWidth: "450px", margin: "auto" }}>
         <Reset />
         <Header />
         <Router>
