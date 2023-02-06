@@ -1,12 +1,13 @@
-import { makeStyles } from "@material-ui/core";
 import "./App.css";
+import React, {Fragment} from 'react';
+import { makeStyles } from "@material-ui/core";
 import { Reset } from "styled-reset";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Location from "./components/Location";
 
 const useStyles = makeStyles(() => ({
@@ -57,30 +58,28 @@ function App() {
       <div className={classes.wrapper}>
         <Reset />
         <Header />
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/">
-              {weatherInfo !== null && (
+        <Router>
+        <Fragment>
+          <Routes>
+            <Route exact path="/" element={weatherInfo !== null && (
                 <Main
                   weatherInfo={weatherInfo}
                   topPrefecture={topPrefecture}
                   topCity={topCity}
                   test={test}
                   />
-                  )}
-            </Route>
-            <Route path="/location">
-              <Location
+                  )} />
+            <Route path="/location" element={<Location
                 setX={setX}
                 setY={setY}
                 setTopPrefecture={setTopPrefecture}
                 setTopCity={setTopCity}
                 setTest={setTest}
-              />
-            </Route>
-          </Switch>
+              />} />
+          </Routes>
           <Footer buttonColor={buttonColor} setButtonColor={setButtonColor} />
-        </BrowserRouter>
+          </Fragment>
+        </Router>
       </div>
     </>
   );
