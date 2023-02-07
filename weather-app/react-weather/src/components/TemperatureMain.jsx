@@ -1,5 +1,7 @@
 import React from 'react'
+import TemperatureMainDesc from '../components/molecules/TemperatureMainDesc'
 import { WeatherList } from './WeatherList'
+
 
 const TemperatureMain = ({ weatherInfo, topPrefecture, topCity }) => {
 
@@ -11,17 +13,13 @@ const TemperatureMain = ({ weatherInfo, topPrefecture, topCity }) => {
   }
 
   return (
-    <>
     <div className="temperature-main" style={BackgroundStyle} >
-        <div className="temperature-main__desc">
-            <p>{topPrefecture} / {topCity}</p>
-            <span>
-              {weather.name}
-            </span>
-            <h2>{weatherInfo.current_weather.temperature}℃</h2>
-        </div>
+      <TemperatureMainDesc 
+        weatherInfo={weatherInfo}
+        topPrefecture={topPrefecture}
+        topCity={topCity}
+      />
     </div>
-    </>
   )
 }
 
