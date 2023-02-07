@@ -3,6 +3,7 @@
 </p>
 
 # Weather App 〜全国のお天気を検索〜
+### https://weather-app-taic-dev.vercel.app/
 
 ## Demo
 <div align="center">
@@ -22,7 +23,7 @@ Locationページでは調べたい地域を選択できます。
 
 ## Requirement
 - node.js v16.14.0
-- react.js v17.0.2
+- react.js v18.0.0
 
 ## Usage
 1. 今日の天気,1時間毎の天気/気温,1週間の天気/気温を確認できる
@@ -37,14 +38,7 @@ $ git clone https://github.com/taic-dev/weatherApp.git
 ・react Start-up
 $ cd weather-app/react-weather
 $ npm install
-$ npm install --save react@17.0.2 react-dom@17.0.2
-$ npm install react-router-dom@5.2.0
 $ npm start
-
-・node api Start-up
-$ cd weather-app/node-weather-api
-.env.exampleを.envに変更
-$ node api.js
 ```
 
 ## Author

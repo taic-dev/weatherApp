@@ -1,23 +1,15 @@
-import { makeStyles } from "@material-ui/core";
 import "./App.css";
+import React, {Fragment} from 'react';
 import { Reset } from "styled-reset";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Location from "./components/Location";
 
-const useStyles = makeStyles(() => ({
-  wrapper: {
-    maxWidth: "450px",
-    margin: "auto",
-  },
-}));
-
 function App() {
-  const classes = useStyles();
   const [weatherInfo, setWeatherInfo] = useState(null);
   const [buttonColor, setButtonColor] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -33,7 +25,8 @@ function App() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const baseURL = `http://localhost:3001?latitude=${X}&longitude=${Y}`;
+        console.log(X,Y);
+        const baseURL = `https://api.open-meteo.com/v1/forecast?latitude=${Y}&longitude=${X}&current_weather=true&hourly=temperature_2m,weathercode&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=Asia%2FTokyo&current_weather`;
         let response = await axios.get(baseURL);
         console.log(response.data);
         setWeatherInfo(response.data);
@@ -53,33 +46,31 @@ function App() {
 
   return (
     <>
-      <div className={classes.wrapper}>
+      <div style={{ maxWidth: "450px", margin: "auto" }}>
         <Reset />
         <Header />
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/">
-              {weatherInfo !== null && (
+        <Router>
+        <Fragment>
+          <Routes>
+            <Route exact path="/" element={weatherInfo !== null && (
                 <Main
                   weatherInfo={weatherInfo}
                   topPrefecture={topPrefecture}
                   topCity={topCity}
                   test={test}
                   />
-                  )}
-            </Route>
-            <Route path="/location">
-              <Location
+                  )} />
+            <Route path="/location" element={<Location
                 setX={setX}
                 setY={setY}
                 setTopPrefecture={setTopPrefecture}
                 setTopCity={setTopCity}
                 setTest={setTest}
-              />
-            </Route>
-          </Switch>
+              />} />
+          </Routes>
           <Footer buttonColor={buttonColor} setButtonColor={setButtonColor} />
-        </BrowserRouter>
+          </Fragment>
+        </Router>
       </div>
     </>
   );

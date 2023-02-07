@@ -1,6 +1,6 @@
-import { Button, FormControl, InputLabel, MenuItem, Select, } from "@material-ui/core";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Button, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 const Location = ({
   setX,
@@ -18,7 +18,7 @@ const Location = ({
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const prefecturesURL = "http://localhost:3001/prefectures";
+        const prefecturesURL = "https://geoapi.heartrails.com/api/json?method=getPrefectures";
         let prefecturesResponse = await axios.get(prefecturesURL);
         setPrefectures(prefecturesResponse.data.response.prefecture);
       } catch (e) {
@@ -32,11 +32,8 @@ const Location = ({
     setSelectPrefectures(e.target.value);
     setTopPrefecture(e.target.value);
 
-    const changePrefecturesURL = "http://localhost:3001/change-city";
-    let getCityInfo = await axios.post(changePrefecturesURL, {
-      prefecture: e.target.value,
-    });
-
+    const changePrefecturesURL = `https://geoapi.heartrails.com/api/json?method=getCities&prefecture=${e.target.value}`;
+    let getCityInfo = await axios.get(changePrefecturesURL);
     setCity(getCityInfo.data.response.location);
   };
 
@@ -44,10 +41,9 @@ const Location = ({
     setSelectCity(e.target.value);
     setTopCity(e.target.value);
 
-    const settingLocationURL = "http://localhost:3001/setting-location";
-    const getTownInfo = await axios.post(settingLocationURL, {
-      selectPrefectures: selectPrefectures,
-    });
+    const settingLocationURL = `https://geoapi.heartrails.com/api/json?method=getTowns&prefecture=${selectPrefectures}`;
+    const getTownInfo = await axios.get(settingLocationURL);
+    console.log(getTownInfo);
 
     const getTown = getTownInfo.data.response.location.filter(
       (townInfo, index) => townInfo.city == e.target.value
@@ -61,10 +57,8 @@ const Location = ({
   const settingTown = (e) => setSelectTown(e.target.value);
 
   const settingCoordinate = async () => {
-    const settingLocationURL = "http://localhost:3001/setting-location";
-    const getTownInfo = await axios.post(settingLocationURL, {
-      selectPrefectures: selectPrefectures,
-    });
+    const settingLocationURL = `https://geoapi.heartrails.com/api/json?method=getTowns&prefecture=${selectPrefectures}`;
+    const getTownInfo = await axios.get(settingLocationURL)
 
     getTownInfo.data.response.location.map(async (townInfo) => {
       if (selectCity !== townInfo.city) return;
