@@ -1,7 +1,7 @@
 import "./App.css";
 import React, {Fragment} from 'react';
 import { Reset } from "styled-reset";
-import Header from "./components/Header";
+import Header from "./components/molecules/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import axios from "axios";
