@@ -1,0 +1,17 @@
+.temperature-time__item {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 24px;
+}
+
+.temperature-time__item:first-child {
+  margin-left: 0;
+}
+
+.temperature-time__item svg{
+    height: 1.5em;
+}

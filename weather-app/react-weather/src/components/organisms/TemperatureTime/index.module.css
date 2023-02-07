@@ -1,0 +1,7 @@
+.temperature-time{
+    margin: 2%;
+    padding: 5% 3%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 6px #ccc;
+    overflow-x: scroll;
+}
