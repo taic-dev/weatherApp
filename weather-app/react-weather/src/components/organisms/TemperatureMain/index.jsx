@@ -1,9 +1,8 @@
 import React from 'react'
-import TemperatureMainDesc from '../components/molecules/TemperatureMainDesc'
-import { WeatherList } from './WeatherList'
+import TemperatureMainDesc from '../../molecules/TemperatureMainDesc'
+import { WeatherList } from '../../WeatherList'
 
-
-const TemperatureMain = ({ weatherInfo, topPrefecture, topCity }) => {
+const index = ({ weatherInfo, topPrefecture, topCity }) => {
 
   let weather = WeatherList(weatherInfo.current_weather.weathercode);
 
@@ -23,4 +22,4 @@ const TemperatureMain = ({ weatherInfo, topPrefecture, topCity }) => {
   )
 }
 
-export default TemperatureMain
+export default index

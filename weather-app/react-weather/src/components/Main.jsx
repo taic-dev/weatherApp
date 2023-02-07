@@ -1,5 +1,5 @@
 import React from "react";
-import TemperatureMain from "./TemperatureMain";
+import TemperatureMain from "../components/organisms/TemperatureMain";
 import TemperatureTime from "./TemperatureTime";
 import TemperatureWeek from "./TemperatureWeek";
 
