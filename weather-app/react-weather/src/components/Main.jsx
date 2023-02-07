@@ -1,7 +1,7 @@
 import React from "react";
 import TemperatureMain from "../components/organisms/TemperatureMain";
 import TemperatureTime from "../components/organisms/TemperatureTime";
-import TemperatureWeek from "./TemperatureWeek";
+import TemperatureWeek from "../components/organisms/TemperatureWeek";
 
 const Main = ({ weatherInfo, topPrefecture, topCity }) => {
   return (
