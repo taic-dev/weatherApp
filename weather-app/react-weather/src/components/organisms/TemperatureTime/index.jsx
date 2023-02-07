@@ -1,8 +1,9 @@
 import React from "react";
-import TemperatureTimeItem from "../components/molecules/TemperatureTimeItem"
-import { WeatherList } from "./WeatherList";
+import TemperatureTimeItem from "../../molecules/TemperatureTimeItem"
+import { WeatherList } from '../../WeatherList'
 
 const TemperatureTime = ({ weatherInfo }) => {
+
   return (
     <div className="temperature-time">
       <ul className="temperature-time__slider">
