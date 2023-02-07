@@ -1,0 +1,13 @@
+.temperature-week__item{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.temperature-week__item:first-child{
+    margin-top: 0;
+}
+
+.temperature-week__item svg{
+    height: 1.5em;
+}

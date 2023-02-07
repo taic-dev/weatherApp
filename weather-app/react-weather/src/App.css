@@ -1,10 +1,6 @@
-main{
-  height: calc(100vh - 104px);
-}
-
 .temperature-main{
   position: relative;
-  height: 35%;
+  height: 250px;
 }
 
 .temperature-main__desc{
@@ -83,9 +79,6 @@ main{
   justify-content: space-between;
 }
 
-.temperature-week__range{
-  width: 25%;
-}
 
 
 /* Location */

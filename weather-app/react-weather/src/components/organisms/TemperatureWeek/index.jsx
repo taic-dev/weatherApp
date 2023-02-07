@@ -1,26 +1,22 @@
 import React from "react";
+import TemperatureWeekItem from "../../molecules/TemperatureWeekItem";
 import { WeatherList } from "../../WeatherList";
+import styles from "./index.module.css"
 
 const index = ({ weatherInfo }) => {
   return (
-    <div className="temperature-week">
+    <div className={styles["temperature-week"]}>
       <ul className="temperature-week__list">
         {(() => {
           const list = [];
           for (let i = 0; i < 7; i++) {
             let weather = WeatherList(weatherInfo.daily.weathercode[i]);
             list.push(
-              <li key={i} className="temperature-week__item">
-                <span>
-                  {weatherInfo.daily.time[i].slice(-5).replace("-", "/")}
-                </span>
-                <span>{weather.icon}</span>
-                <div className="temperature-week__range">
-                  <span>{weatherInfo.daily.temperature_2m_max[i]}℃</span>
-                  <span>/</span>
-                  <span>{weatherInfo.daily.temperature_2m_min[i]}℃</span>
-                </div>
-              </li>
+              <TemperatureWeekItem
+                weatherInfo={weatherInfo}
+                weather={weather}
+                i={i}
+              />
             );
           }
           return <>{list}</>;
