@@ -12,11 +12,13 @@ const TemperatureTime = ({ weatherInfo }) => {
           for (let i = 0; i < 24; i++) {
             let weather = WeatherList(weatherInfo.hourly.weathercode[i]);
             list.push(
-              <TemperatureTimeItem
-                weatherInfo={weatherInfo}
-                weather={weather}
-                i={i}
-              />
+              <React.Fragment key={i}>
+                <TemperatureTimeItem
+                  weatherInfo={weatherInfo}
+                  weather={weather}
+                  i={i}
+                />
+              </React.Fragment>
             );
           }
           return <>{list}</>;

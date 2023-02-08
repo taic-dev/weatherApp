@@ -1,7 +1,7 @@
 import React from "react";
 import TemperatureWeekItem from "../../molecules/TemperatureWeekItem";
 import { WeatherList } from "../../WeatherList";
-import styles from "./index.module.css"
+import styles from "./index.module.css";
 
 const index = ({ weatherInfo }) => {
   return (
@@ -12,11 +12,13 @@ const index = ({ weatherInfo }) => {
           for (let i = 0; i < 7; i++) {
             let weather = WeatherList(weatherInfo.daily.weathercode[i]);
             list.push(
-              <TemperatureWeekItem
-                weatherInfo={weatherInfo}
-                weather={weather}
-                i={i}
-              />
+              <React.Fragment key={i}>
+                <TemperatureWeekItem
+                  weatherInfo={weatherInfo}
+                  weather={weather}
+                  i={i}
+                />
+              </React.Fragment>
             );
           }
           return <>{list}</>;
