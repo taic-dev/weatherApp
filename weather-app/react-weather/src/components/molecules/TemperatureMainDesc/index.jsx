@@ -1,8 +1,7 @@
 import React from "react";
-import { WeatherList } from "../../WeatherList";
+import { WeatherList } from "../../../utils/WeatherList";
 
 const index = ({ weatherInfo, topPrefecture, topCity }) => {
-
   let weather = WeatherList(weatherInfo.current_weather.weathercode);
 
   return (

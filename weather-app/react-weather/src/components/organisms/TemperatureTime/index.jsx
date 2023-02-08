@@ -1,6 +1,6 @@
 import React from "react";
 import TemperatureTimeItem from "../../molecules/TemperatureTimeItem";
-import { WeatherList } from "../../WeatherList";
+import { WeatherList } from "../../../utils/WeatherList";
 import styles from "./index.module.css";
 
 const TemperatureTime = ({ weatherInfo }) => {
