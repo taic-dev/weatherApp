@@ -3,7 +3,7 @@ import React, {Fragment} from 'react';
 import { Reset } from "styled-reset";
 import Header from "./components/molecules/Header";
 import Main from "./components/Main";
-import Footer from "./components/Footer";
+import Footer from "./components/molecules/Footer";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -11,7 +11,6 @@ import Location from "./components/Location";
 
 function App() {
   const [weatherInfo, setWeatherInfo] = useState(null);
-  const [buttonColor, setButtonColor] = useState(0);
   const [loading, setLoading] = useState(false);
   const [X, setX] = useState(139.6823);
   const [Y, setY] = useState(35.6785);
@@ -68,7 +67,7 @@ function App() {
                 setTest={setTest}
               />} />
           </Routes>
-          <Footer buttonColor={buttonColor} setButtonColor={setButtonColor} />
+          <Footer />
           </Fragment>
         </Router>
       </div>
