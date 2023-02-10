@@ -43,7 +43,6 @@ const Location = ({
 
     const settingLocationURL = `https://geoapi.heartrails.com/api/json?method=getTowns&prefecture=${selectPrefectures}`;
     const getTownInfo = await axios.get(settingLocationURL);
-    console.log(getTownInfo);
 
     const getTown = getTownInfo.data.response.location.filter(
       (townInfo, index) => townInfo.city == e.target.value

@@ -1,7 +1,7 @@
 import React from "react";
 import { AppBar, Toolbar, Typography } from "@mui/material";
 
-const Header = () => {
+const index = () => {
   return (
     <AppBar position="static">
       <Toolbar variant="dense">
@@ -13,4 +13,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default index;
