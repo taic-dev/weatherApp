@@ -4,6 +4,7 @@ import { Reset } from "styled-reset";
 import Header from "./components/molecules/Header";
 import Main from "./components/templates/Main/Main";
 import Footer from "./components/molecules/Footer";
+import Loading from "./components/atoms/Loading";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -37,7 +38,7 @@ function App() {
   }, [X, Y]);
 
   if (loading) {
-    return <p>読込中</p>;
+    return <Loading />;
   }
 
   return (
@@ -46,37 +47,35 @@ function App() {
         <Reset />
         <Header />
         <Router>
-          <Fragment>
-            <Routes>
-              <Route
-                exact
-                path="/"
-                element={
-                  weatherInfo !== null && (
-                    <Main
-                      weatherInfo={weatherInfo}
-                      topPrefecture={topPrefecture}
-                      topCity={topCity}
-                      test={test}
-                    />
-                  )
-                }
-              />
-              <Route
-                path="/location"
-                element={
-                  <Location
-                    setX={setX}
-                    setY={setY}
-                    setTopPrefecture={setTopPrefecture}
-                    setTopCity={setTopCity}
-                    setTest={setTest}
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                weatherInfo !== null && (
+                  <Main
+                    weatherInfo={weatherInfo}
+                    topPrefecture={topPrefecture}
+                    topCity={topCity}
+                    test={test}
                   />
-                }
-              />
-            </Routes>
-            <Footer />
-          </Fragment>
+                )
+              }
+            />
+            <Route
+              path="/location"
+              element={
+                <Location
+                  setX={setX}
+                  setY={setY}
+                  setTopPrefecture={setTopPrefecture}
+                  setTopCity={setTopCity}
+                  setTest={setTest}
+                />
+              }
+            />
+          </Routes>
+          <Footer />
         </Router>
       </div>
     </>
