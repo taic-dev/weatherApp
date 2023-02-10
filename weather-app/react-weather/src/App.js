@@ -8,7 +8,7 @@ import Loading from "./components/atoms/Loading";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Location from "./components/Location";
+import Location from "./components/templates/Location/Location";
 
 function App() {
   const [weatherInfo, setWeatherInfo] = useState(null);
